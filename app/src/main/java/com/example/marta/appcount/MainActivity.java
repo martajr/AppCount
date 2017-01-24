@@ -2,6 +2,9 @@ package com.example.marta.appcount;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -10,7 +13,7 @@ public class MainActivity extends Activity {
     private Integer contador;
 
 
-    class MyButtonListener implements OnClickListener{
+    class MyButtonListener implements View.OnClickListener {
         @Override
         public void onClick(View view){
             contador++;
@@ -25,6 +28,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         contador =0;
+        display.setText(contador.toString());
         boton =(Button)findViewById(R.id.button1);
         display=(TextView)findViewById(R.id.textView);
 
