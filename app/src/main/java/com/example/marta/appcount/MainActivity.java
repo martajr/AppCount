@@ -9,18 +9,26 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 
     private TextView display;
-    private Button boton;
+    private Button botonAdd;
+    private Button botonSub;
     private Integer contador;
 
 
-    class MyButtonListener implements View.OnClickListener {
+    class ButtonAdd implements View.OnClickListener {
         @Override
         public void onClick(View view){
             contador++;
             display.setText(contador.toString());
         }
     }
-    //
+
+    class ButtonSub implements View.OnClickListener {
+        @Override
+        public void onClick(View view){
+            contador--;
+            display.setText(contador.toString());
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +36,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         contador =0;
-        display.setText(contador.toString());
-        boton =(Button)findViewById(R.id.button1);
+
+        botonAdd =(Button)findViewById(R.id.button1);
+        botonSub =(Button)findViewById(R.id.button2);
         display=(TextView)findViewById(R.id.textView);
 
-        boton.setOnClickListener(new MyButtonListener());
+        botonAdd.setOnClickListener(new ButtonAdd());
+        botonSub.setOnClickListener(new ButtonSub());
     }
 
 }
