@@ -6,12 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class Vista extends Activity implements  I_vista {
+public class Vista extends Activity implements  I_Vista {
 
     private TextView display;
     private Button botonAdd;
     private Button botonSub;
-    private I_presentador presentador;
+    private I_Presentador presentador;
 
 
     @Override
@@ -23,7 +23,7 @@ public class Vista extends Activity implements  I_vista {
     class ButtonAdd implements View.OnClickListener {
         @Override
         public void onClick(View view){
-           presentador.aumentarContandor();
+           presentador.aumentarContador();
            setText(presentador.presentarContador());
         }
 
@@ -33,7 +33,7 @@ public class Vista extends Activity implements  I_vista {
     class ButtonSub implements View.OnClickListener {
         @Override
         public void onClick(View view){
-            presentador.disminuirContandor();
+            presentador.disminuirContador();
             setText(presentador.presentarContador());
         }
     }
